@@ -16,7 +16,7 @@ mkdir -p "$(dirname "$writefile")"
 # Write the string to the file, creating or overwriting the file
 echo "$writestr" > "$writefile"
 
-# Check if the file was successfully created
+# Check if the file was created
 if [ $? -ne 0 ]; then
     echo "Error: Could not create file."
     exit 1

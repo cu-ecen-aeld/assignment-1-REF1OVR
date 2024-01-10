@@ -10,16 +10,14 @@ if [ -z "$filesdir" ] || [ -z "$searchstr" ]; then
     exit 1
 fi
 
-# Check if filesdir is a valid directory
+# Check if filesdir is valid directory
 if [ ! -d "$filesdir" ]; then
     echo "Error: Provided path is not a directory."
     exit 1
 fi
 
-# Count the number of files
+# Count the number of files and matching lines
 file_count=$(find "$filesdir" -type f | wc -l)
-
-# Count the number of matching lines
 matching_lines_count=$(grep -r "$searchstr" "$filesdir" | wc -l)
 
 # Print the result
